@@ -1,0 +1,43 @@
+{
+  "name": "Express_app",
+  "version": "1.0.0",
+  "description": "express app",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "custom-env": "^1.0.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.1"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "env": {
+      "es6": true,
+      "browser": true
+    },
+    "rules": {
+      "brace-style": [
+        "error",
+        "stroustrup"
+      ],
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "no-unused-vars": [
+        "warn"
+      ],
+      "no-var": [
+        "off"
+      ],
+      "one-var": [
+        "off"
+      ]
+    }
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}

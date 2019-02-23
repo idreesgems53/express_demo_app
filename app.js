@@ -1,5 +1,6 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -7,11 +8,18 @@ const app = express();
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
+// Body Parser Middleware
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
+
 // Env file for development
 require('custom-env').env();
 
 // Static folder for assets
 app.use(express.static('public'));
+app.use('/packages', express.static(__dirname + '/node_modules'));
 
 // load routes
 const indexRoutes = require('./routes/index');

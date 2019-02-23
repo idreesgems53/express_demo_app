@@ -4,6 +4,10 @@ module.exports = {
       pageTitle: 'User Homepage'
     });
   },
+  create: (req, res) => {
+    console.log(req.body);
+    res.redirect('/');
+  },
   delete: (req, res) => {
     res.send('User Homepage');
   }
